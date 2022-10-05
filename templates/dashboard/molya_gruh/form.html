@@ -1,0 +1,77 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+{% block content %}
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Fanta</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="{% url 'main:index' %}">Saytga oʻtish</a></li>
+                        <li class="breadcrumb-item active">Fanta</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card card-primary">
+
+                        <form method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label>Guruhlar</label>
+                                    <br>
+                                    {{ form.groups }}
+                                </div>
+                                <div class="form-group">
+                                    <label>Talaba</label>
+                                    <br>
+                                    {{ form.students }}
+                                </div>
+                                <div class="form-group">
+                                    <label>Oy</label>
+                                    <br>
+                                    {{ form.yaer }}
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Summa</label>
+                                    <br>
+                                    {{ form.price }}
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Ism</label>
+                                    <br>
+                                    {{ form.name }}
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Raqam</label>
+                                    <br>
+                                    {{ form.number }}
+                                </div>
+                                <div class="form-group">
+                                    <label>Tanlash</label>
+                                    <br>
+                                    {{ form.tuliv }}
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary">Saqlash</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
